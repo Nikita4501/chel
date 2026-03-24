@@ -1,0 +1,44 @@
+﻿<Page x:Class="chel.SessionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Session">
+    <DockPanel Margin="10">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock x:Name="FilmTitle" FontSize="18" FontWeight="Bold" />
+            <TextBlock x:Name="SessionInfo" Margin="12,0,0,0" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <!-- Панель для карты зала -->
+                <ItemsControl x:Name="SeatRows">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <ItemsControl ItemsSource="{Binding}">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel Orientation="Horizontal"/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Button Width="38" Height="30" Margin="2" Content="{Binding SeatLabel}" Tag="{Binding}" Click="SeatButton_Click"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center">
+                    <Button Content="Очистить выбор" Click="ClearSelection_Click" Margin="6"/>
+                    <Button Content="Оформить билет" Click="Checkout_Click" Margin="6"/>
+                    <Button Content="На главную" Click="Home_Click" HorizontalAlignment="Left" Margin="10"/>
+
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</Page>

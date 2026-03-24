@@ -1,0 +1,27 @@
+﻿<Window x:Class="chel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:chel"
+        Title="Chel — Кинотеатр" Height="700" Width="1000">
+    <Window.Resources>
+    </Window.Resources>
+
+    <DockPanel Margin="10">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,0,0,10">
+            <TextBox x:Name="SearchBox" Width="300" Margin="0,0,10,0" VerticalAlignment="Center" TextChanged="SearchBox_TextChanged"/>
+            <ComboBox x:Name="SortCombo" Width="180" VerticalAlignment="Center" SelectionChanged="SortCombo_SelectionChanged">
+                <ComboBoxItem Tag="TitleAsc" IsSelected="True">Название ↑</ComboBoxItem>
+                <ComboBoxItem Tag="TitleDesc">Название ↓</ComboBoxItem>
+                <ComboBoxItem Tag="RatingDesc">Рейтинг ↓</ComboBoxItem>
+                <ComboBoxItem Tag="RatingAsc">Рейтинг ↑</ComboBoxItem>
+            </ComboBox>
+
+            <Button Content="Личный кабинет" HorizontalAlignment="Right" Margin="10,0,0,0" Click="GoProfile_Click"/>
+            <Button Content="Вход" Margin="6,0,0,0" Click="GoLogin_Click"/>
+            <Button Content="Регистрация" Margin="6,0,0,0" Click="GoRegister_Click"/>
+        </StackPanel>
+
+        <Frame x:Name="MainFrame"
+       NavigationUIVisibility="Hidden"/>
+    </DockPanel>
+</Window>

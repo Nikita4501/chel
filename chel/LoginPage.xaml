@@ -1,0 +1,17 @@
+﻿<Page x:Class="chel.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="10" Width="320">
+        <TextBlock Text="Вход" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+        <TextBlock Text="Имя пользователя" />
+        <TextBox x:Name="UserNameBox" Margin="0,6"/>
+        <TextBlock Text="Пароль" />
+        <PasswordBox x:Name="PasswordBox" Margin="0,6"/>
+        <Button Content="Войти" Click="Login_Click" Margin="0,8"/>
+        <Button Content="На главную"
+        Click="Home_Click"
+        HorizontalAlignment="Left"
+        Margin="10"/>
+
+    </StackPanel>
+</Page>
