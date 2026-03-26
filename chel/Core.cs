@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace chel
 {
-    internal class Core
+    /// <summary>
+    /// Глобальный класс для доступа к контексту базы данных и текущему пользователю.
+    /// </summary>
+    public static class Core
     {
         public static chelmoviesEntities Context = new chelmoviesEntities();
         public static Users CurrentUser { get; set; }

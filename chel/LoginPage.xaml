@@ -7,11 +7,14 @@
         <TextBox x:Name="UserNameBox" Margin="0,6"/>
         <TextBlock Text="Пароль" />
         <PasswordBox x:Name="PasswordBox" Margin="0,6"/>
-        <Button Content="Войти" Click="Login_Click" Margin="0,8"/>
-        <Button Content="На главную"
-        Click="Home_Click"
-        HorizontalAlignment="Left"
-        Margin="10"/>
 
+        <!-- Блок капчи (изначально скрыт) -->
+        <TextBlock x:Name="CaptchaText" Text="Введите код с картинки:" Visibility="Collapsed" Margin="0,6,0,0"/>
+        <Image x:Name="CaptchaImage" Visibility="Collapsed" Width="150" Height="50" Margin="0,6"/>
+        <TextBox x:Name="CaptchaInput" Visibility="Collapsed" Width="120" Margin="0,6"/>
+        <Button x:Name="VerifyCaptchaBtn" Content="Проверить капчу" Visibility="Collapsed" Click="VerifyCaptcha_Click" Margin="0,6"/>
+
+        <Button Content="Войти" Click="Login_Click" Margin="0,8"/>
+        <Button Content="На главную" Click="Home_Click" HorizontalAlignment="Left" Margin="10"/>
     </StackPanel>
 </Page>
